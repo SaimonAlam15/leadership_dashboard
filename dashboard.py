@@ -73,7 +73,7 @@ def dashboard():
     total_referrals_created_this_week = len(
         referrals_df[referrals_df['Created_Time'] >= start_of_week]
     )
-    average_referrals_per_job = round(len(open_jobs_df) / total_referrals, 2)
+    average_referrals_per_job = round(total_referrals/len(open_jobs_df), 2)
     
     ref1, ref2, ref3 = st.columns(3)
     ref1.metric("# Total Referrals", total_referrals)
